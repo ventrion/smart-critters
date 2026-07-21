@@ -1,0 +1,154 @@
+{
+	"schemaVersion": 1,
+	"subject": "maths",
+	"grade": 4,
+	"items": [
+		{
+			"id": "m4-001",
+			"type": "multipleChoice",
+			"payload": {
+				"prompt": "Kolik je 6 × 7?",
+				"choices": [
+					{ "id": "a", "label": "42" },
+					{ "id": "b", "label": "36" },
+					{ "id": "c", "label": "48" }
+				],
+				"correctChoiceId": "a"
+			}
+		},
+		{
+			"id": "m4-002",
+			"type": "shortAnswer",
+			"payload": {
+				"prompt": "Kolik je 8 × 9? Napiš číslici.",
+				"acceptedAnswers": ["72"]
+			}
+		},
+		{
+			"id": "m4-003",
+			"type": "multipleChoice",
+			"payload": {
+				"prompt": "Kolik je 56 ÷ 8?",
+				"choices": [
+					{ "id": "a", "label": "6" },
+					{ "id": "b", "label": "7" },
+					{ "id": "c", "label": "8" }
+				],
+				"correctChoiceId": "b"
+			}
+		},
+		{
+			"id": "m4-004",
+			"type": "shortAnswer",
+			"payload": {
+				"prompt": "Kolik je 81 ÷ 9? Napiš číslici.",
+				"acceptedAnswers": ["9"]
+			}
+		},
+		{
+			"id": "m4-005",
+			"type": "multipleChoice",
+			"payload": {
+				"prompt": "Který zlomek je stejný jako 1/2?",
+				"choices": [
+					{ "id": "a", "label": "2/3" },
+					{ "id": "b", "label": "2/4" },
+					{ "id": "c", "label": "3/4" }
+				],
+				"correctChoiceId": "b"
+			}
+		},
+		{
+			"id": "m4-006",
+			"type": "shortAnswer",
+			"payload": {
+				"prompt": "Kolik je 25 % ze 100? Napiš číslici.",
+				"acceptedAnswers": ["25"]
+			}
+		},
+		{
+			"id": "m4-007",
+			"type": "multipleChoice",
+			"payload": {
+				"prompt": "Kolik je 12 × 12?",
+				"choices": [
+					{ "id": "a", "label": "124" },
+					{ "id": "b", "label": "144" },
+					{ "id": "c", "label": "164" }
+				],
+				"correctChoiceId": "b"
+			}
+		},
+		{
+			"id": "m4-008",
+			"type": "shortAnswer",
+			"payload": {
+				"prompt": "V obdélníku 5 cm × 3 cm vypočítej obvod (v cm).",
+				"acceptedAnswers": ["16"]
+			}
+		},
+		{
+			"id": "m4-009",
+			"type": "multipleChoice",
+			"payload": {
+				"prompt": "Které číslo je prvočíslo?",
+				"choices": [
+					{ "id": "a", "label": "9" },
+					{ "id": "b", "label": "15" },
+					{ "id": "c", "label": "13" }
+				],
+				"correctChoiceId": "c"
+			}
+		},
+		{
+			"id": "m4-010",
+			"type": "shortAnswer",
+			"payload": {
+				"prompt": "Kolik je 144 ÷ 12? Napiš číslici.",
+				"acceptedAnswers": ["12"]
+			}
+		},
+		{
+			"id": "m4-011",
+			"type": "multipleChoice",
+			"payload": {
+				"prompt": "Kolik minut má 1 hodina 15 minut?",
+				"choices": [
+					{ "id": "a", "label": "75" },
+					{ "id": "b", "label": "90" },
+					{ "id": "c", "label": "115" }
+				],
+				"correctChoiceId": "a"
+			}
+		},
+		{
+			"id": "m4-012",
+			"type": "shortAnswer",
+			"payload": {
+				"prompt": "Obsah čtverce o straně 4 cm je kolik cm²? Napiš číslici.",
+				"acceptedAnswers": ["16"]
+			}
+		},
+		{
+			"id": "m4-013",
+			"type": "multipleChoice",
+			"payload": {
+				"prompt": "Kolik je 7 × 8?",
+				"choices": [
+					{ "id": "a", "label": "54" },
+					{ "id": "b", "label": "56" },
+					{ "id": "c", "label": "64" }
+				],
+				"correctChoiceId": "b"
+			}
+		},
+		{
+			"id": "m4-014",
+			"type": "shortAnswer",
+			"payload": {
+				"prompt": "Kolik je 100 - 37? Napiš číslici.",
+				"acceptedAnswers": ["63"]
+			}
+		}
+	]
+}

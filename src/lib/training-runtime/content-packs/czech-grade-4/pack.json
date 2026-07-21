@@ -1,0 +1,146 @@
+{
+	"schemaVersion": 1,
+	"subject": "czech",
+	"grade": 4,
+	"items": [
+		{
+			"id": "c4-001",
+			"type": "multipleChoice",
+			"payload": {
+				"prompt": "Které slovo je napsáno správně?",
+				"choices": [
+					{ "id": "a", "label": "zěrno" },
+					{ "id": "b", "label": "zrno" },
+					{ "id": "c", "label": "zrňo" }
+				],
+				"correctChoiceId": "b"
+			}
+		},
+		{
+			"id": "c4-002",
+			"type": "shortAnswer",
+			"payload": {
+				"prompt": "Napiš synonymum ke slovu dům (bytové).",
+				"acceptedAnswers": ["obydlí", "stavení"]
+			}
+		},
+		{
+			"id": "c4-003",
+			"type": "multipleChoice",
+			"payload": {
+				"prompt": "Jaký je pád: „vidím bratra“?",
+				"choices": [
+					{ "id": "a", "label": "1. nominativ" },
+					{ "id": "b", "label": "4. akuzativ" },
+					{ "id": "c", "label": "3. dativ" }
+				],
+				"correctChoiceId": "b"
+			}
+		},
+		{
+			"id": "c4-004",
+			"type": "shortAnswer",
+			"payload": {
+				"prompt": "Napiš přídavné jméno od slova vítr.",
+				"acceptedAnswers": ["větrný"]
+			}
+		},
+		{
+			"id": "c4-005",
+			"type": "multipleChoice",
+			"payload": {
+				"prompt": "Vyber správný tvar: Dlouhá cesta vedla lesem ___",
+				"choices": [
+					{ "id": "a", "label": "k řece" },
+					{ "id": "b", "label": "k řeky" },
+					{ "id": "c", "label": "k řeko" }
+				],
+				"correctChoiceId": "a"
+			}
+		},
+		{
+			"id": "c4-006",
+			"type": "shortAnswer",
+			"payload": {
+				"prompt": "Napiš opak slova levý (strana).",
+				"acceptedAnswers": ["pravý"]
+			}
+		},
+		{
+			"id": "c4-007",
+			"type": "multipleChoice",
+			"payload": {
+				"prompt": "Co je to podstatné jméno?",
+				"choices": [
+					{ "id": "a", "label": "slovo vyjadřující činnost" },
+					{ "id": "b", "label": "název osoby, zvířete, věci" },
+					{ "id": "c", "label": "slovo určující počet" }
+				],
+				"correctChoiceId": "b"
+			}
+		},
+		{
+			"id": "c4-008",
+			"type": "shortAnswer",
+			"payload": {
+				"prompt": "Napiš zkratku pro „například“.",
+				"acceptedAnswers": ["např."]
+			}
+		},
+		{
+			"id": "c4-009",
+			"type": "multipleChoice",
+			"payload": {
+				"prompt": "Které slovo obsahuje skupinu bě/bje správně?",
+				"choices": [
+					{ "id": "a", "label": "objev" },
+					{ "id": "b", "label": "oběd" },
+					{ "id": "c", "label": "objed" }
+				],
+				"correctChoiceId": "b"
+			}
+		},
+		{
+			"id": "c4-010",
+			"type": "shortAnswer",
+			"payload": {
+				"prompt": "Napiš sloveso v 1. os. j. č.: „(já) ___ knihu“ (číst).",
+				"acceptedAnswers": ["čtu"]
+			}
+		},
+		{
+			"id": "c4-011",
+			"type": "multipleChoice",
+			"payload": {
+				"prompt": "Která věta má správně čárku?",
+				"choices": [
+					{ "id": "a", "label": "Šel jsem domů, a pak jsem spal." },
+					{ "id": "b", "label": "Šel jsem domů a pak jsem spal." },
+					{ "id": "c", "label": "Šel, jsem domů a pak jsem spal." }
+				],
+				"correctChoiceId": "b"
+			}
+		},
+		{
+			"id": "c4-012",
+			"type": "shortAnswer",
+			"payload": {
+				"prompt": "Napiš infinitiv slovesa „píšu“.",
+				"acceptedAnswers": ["psát"]
+			}
+		},
+		{
+			"id": "c4-013",
+			"type": "multipleChoice",
+			"payload": {
+				"prompt": "Vyber vzor podstatného jména „hrad“.",
+				"choices": [
+					{ "id": "a", "label": "pán" },
+					{ "id": "b", "label": "muž" },
+					{ "id": "c", "label": "hrad" }
+				],
+				"correctChoiceId": "c"
+			}
+		}
+	]
+}

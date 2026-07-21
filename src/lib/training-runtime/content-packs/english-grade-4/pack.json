@@ -1,0 +1,146 @@
+{
+	"schemaVersion": 1,
+	"subject": "english",
+	"grade": 4,
+	"items": [
+		{
+			"id": "e4-001",
+			"type": "multipleChoice",
+			"payload": {
+				"prompt": "Choose the correct plural of „child“.",
+				"choices": [
+					{ "id": "a", "label": "childs" },
+					{ "id": "b", "label": "children" },
+					{ "id": "c", "label": "childes" }
+				],
+				"correctChoiceId": "b"
+			}
+		},
+		{
+			"id": "e4-002",
+			"type": "shortAnswer",
+			"payload": {
+				"prompt": "Write the past tense of „go“.",
+				"acceptedAnswers": ["went"]
+			}
+		},
+		{
+			"id": "e4-003",
+			"type": "multipleChoice",
+			"payload": {
+				"prompt": "Which sentence is correct?",
+				"choices": [
+					{ "id": "a", "label": "She don't like tea." },
+					{ "id": "b", "label": "She doesn't like tea." },
+					{ "id": "c", "label": "She not like tea." }
+				],
+				"correctChoiceId": "b"
+			}
+		},
+		{
+			"id": "e4-004",
+			"type": "shortAnswer",
+			"payload": {
+				"prompt": "Write the opposite of „hot“.",
+				"acceptedAnswers": ["cold"]
+			}
+		},
+		{
+			"id": "e4-005",
+			"type": "multipleChoice",
+			"payload": {
+				"prompt": "Choose the correct article: „I see ___ elephant.“",
+				"choices": [
+					{ "id": "a", "label": "a" },
+					{ "id": "b", "label": "an" },
+					{ "id": "c", "label": "the" }
+				],
+				"correctChoiceId": "b"
+			}
+		},
+		{
+			"id": "e4-006",
+			"type": "shortAnswer",
+			"payload": {
+				"prompt": "Write the plural of „foot“.",
+				"acceptedAnswers": ["feet"]
+			}
+		},
+		{
+			"id": "e4-007",
+			"type": "multipleChoice",
+			"payload": {
+				"prompt": "Which word is a verb?",
+				"choices": [
+					{ "id": "a", "label": "quickly" },
+					{ "id": "b", "label": "run" },
+					{ "id": "c", "label": "happy" }
+				],
+				"correctChoiceId": "b"
+			}
+		},
+		{
+			"id": "e4-008",
+			"type": "shortAnswer",
+			"payload": {
+				"prompt": "Write the past tense of „eat“.",
+				"acceptedAnswers": ["ate"]
+			}
+		},
+		{
+			"id": "e4-009",
+			"type": "multipleChoice",
+			"payload": {
+				"prompt": "Choose the correct preposition: „The book is ___ the table.“",
+				"choices": [
+					{ "id": "a", "label": "on" },
+					{ "id": "b", "label": "of" },
+					{ "id": "c", "label": "from" }
+				],
+				"correctChoiceId": "a"
+			}
+		},
+		{
+			"id": "e4-010",
+			"type": "shortAnswer",
+			"payload": {
+				"prompt": "Write the comparative of „big“.",
+				"acceptedAnswers": ["bigger"]
+			}
+		},
+		{
+			"id": "e4-011",
+			"type": "multipleChoice",
+			"payload": {
+				"prompt": "Which month comes after January?",
+				"choices": [
+					{ "id": "a", "label": "March" },
+					{ "id": "b", "label": "February" },
+					{ "id": "c", "label": "April" }
+				],
+				"correctChoiceId": "b"
+			}
+		},
+		{
+			"id": "e4-012",
+			"type": "shortAnswer",
+			"payload": {
+				"prompt": "Write the past tense of „drink“.",
+				"acceptedAnswers": ["drank"]
+			}
+		},
+		{
+			"id": "e4-013",
+			"type": "multipleChoice",
+			"payload": {
+				"prompt": "Choose the correct form: „Yesterday I ___ to school.“",
+				"choices": [
+					{ "id": "a", "label": "go" },
+					{ "id": "b", "label": "went" },
+					{ "id": "c", "label": "goes" }
+				],
+				"correctChoiceId": "b"
+			}
+		}
+	]
+}

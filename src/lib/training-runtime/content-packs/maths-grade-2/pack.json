@@ -1,0 +1,154 @@
+{
+	"schemaVersion": 1,
+	"subject": "maths",
+	"grade": 2,
+	"items": [
+		{
+			"id": "m2-001",
+			"type": "multipleChoice",
+			"payload": {
+				"prompt": "Kolik je 3 + 4?",
+				"choices": [
+					{ "id": "a", "label": "6" },
+					{ "id": "b", "label": "7" },
+					{ "id": "c", "label": "8" }
+				],
+				"correctChoiceId": "b"
+			}
+		},
+		{
+			"id": "m2-002",
+			"type": "shortAnswer",
+			"payload": {
+				"prompt": "Kolik je 5 + 5? Napiš číslici.",
+				"acceptedAnswers": ["10"]
+			}
+		},
+		{
+			"id": "m2-003",
+			"type": "multipleChoice",
+			"payload": {
+				"prompt": "Kolik je 9 - 3?",
+				"choices": [
+					{ "id": "a", "label": "5" },
+					{ "id": "b", "label": "6" },
+					{ "id": "c", "label": "7" }
+				],
+				"correctChoiceId": "b"
+			}
+		},
+		{
+			"id": "m2-004",
+			"type": "shortAnswer",
+			"payload": {
+				"prompt": "Kolik je 12 - 5? Napiš číslici.",
+				"acceptedAnswers": ["7"]
+			}
+		},
+		{
+			"id": "m2-005",
+			"type": "multipleChoice",
+			"payload": {
+				"prompt": "Které číslo je větší?",
+				"choices": [
+					{ "id": "a", "label": "21" },
+					{ "id": "b", "label": "19" },
+					{ "id": "c", "label": "20" }
+				],
+				"correctChoiceId": "a"
+			}
+		},
+		{
+			"id": "m2-006",
+			"type": "shortAnswer",
+			"payload": {
+				"prompt": "Napiš číslo, které následuje po 28.",
+				"acceptedAnswers": ["29"]
+			}
+		},
+		{
+			"id": "m2-007",
+			"type": "multipleChoice",
+			"payload": {
+				"prompt": "Kolik nohou má kočka?",
+				"choices": [
+					{ "id": "a", "label": "2" },
+					{ "id": "b", "label": "4" },
+					{ "id": "c", "label": "6" }
+				],
+				"correctChoiceId": "b"
+			}
+		},
+		{
+			"id": "m2-008",
+			"type": "shortAnswer",
+			"payload": {
+				"prompt": "Kolik je 6 + 6? Napiš číslici.",
+				"acceptedAnswers": ["12"]
+			}
+		},
+		{
+			"id": "m2-009",
+			"type": "multipleChoice",
+			"payload": {
+				"prompt": "Kolik rohů má trojúhelník?",
+				"choices": [
+					{ "id": "a", "label": "2" },
+					{ "id": "b", "label": "3" },
+					{ "id": "c", "label": "4" }
+				],
+				"correctChoiceId": "b"
+			}
+		},
+		{
+			"id": "m2-010",
+			"type": "shortAnswer",
+			"payload": {
+				"prompt": "Kolik je 7 + 8? Napiš číslici.",
+				"acceptedAnswers": ["15"]
+			}
+		},
+		{
+			"id": "m2-011",
+			"type": "multipleChoice",
+			"payload": {
+				"prompt": "Které číslo je sudé?",
+				"choices": [
+					{ "id": "a", "label": "3" },
+					{ "id": "b", "label": "7" },
+					{ "id": "c", "label": "8" }
+				],
+				"correctChoiceId": "c"
+			}
+		},
+		{
+			"id": "m2-012",
+			"type": "shortAnswer",
+			"payload": {
+				"prompt": "Kolik desítek má číslo 40? Napiš číslici.",
+				"acceptedAnswers": ["4"]
+			}
+		},
+		{
+			"id": "m2-013",
+			"type": "multipleChoice",
+			"payload": {
+				"prompt": "Kolik je 10 + 10?",
+				"choices": [
+					{ "id": "a", "label": "18" },
+					{ "id": "b", "label": "20" },
+					{ "id": "c", "label": "22" }
+				],
+				"correctChoiceId": "b"
+			}
+		},
+		{
+			"id": "m2-014",
+			"type": "shortAnswer",
+			"payload": {
+				"prompt": "Kolik je 20 - 9? Napiš číslici.",
+				"acceptedAnswers": ["11"]
+			}
+		}
+	]
+}

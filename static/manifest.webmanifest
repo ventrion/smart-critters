@@ -1,0 +1,39 @@
+{
+	"name": "Smart Critters",
+	"short_name": "Smart Critters",
+	"description": "Local-first Training app for grades 2 and 4 in Maths, Czech, and English.",
+	"lang": "cs",
+	"dir": "ltr",
+	"display": "standalone",
+	"orientation": "portrait",
+	"background_color": "#fdfaff",
+	"theme_color": "#6c2bd9",
+	"start_url": "/smart-critters/",
+	"scope": "/smart-critters/",
+	"icons": [
+		{
+			"src": "/smart-critters/icons/icon-192.png",
+			"sizes": "192x192",
+			"type": "image/png",
+			"purpose": "any"
+		},
+		{
+			"src": "/smart-critters/icons/icon-512.png",
+			"sizes": "512x512",
+			"type": "image/png",
+			"purpose": "any"
+		},
+		{
+			"src": "/smart-critters/icons/maskable-192.png",
+			"sizes": "192x192",
+			"type": "image/png",
+			"purpose": "maskable"
+		},
+		{
+			"src": "/smart-critters/icons/maskable-512.png",
+			"sizes": "512x512",
+			"type": "image/png",
+			"purpose": "maskable"
+		}
+	]
+}

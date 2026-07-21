@@ -1,0 +1,146 @@
+{
+	"schemaVersion": 1,
+	"subject": "czech",
+	"grade": 2,
+	"items": [
+		{
+			"id": "c2-001",
+			"type": "multipleChoice",
+			"payload": {
+				"prompt": "Které slovo je podstatné jméno?",
+				"choices": [
+					{ "id": "a", "label": "běží" },
+					{ "id": "b", "label": "pes" },
+					{ "id": "c", "label": "modrý" }
+				],
+				"correctChoiceId": "b"
+			}
+		},
+		{
+			"id": "c2-002",
+			"type": "shortAnswer",
+			"payload": {
+				"prompt": "Napiš hlavní město České republiky.",
+				"acceptedAnswers": ["Praha"]
+			}
+		},
+		{
+			"id": "c2-003",
+			"type": "multipleChoice",
+			"payload": {
+				"prompt": "Kolik písmen má abeceda?",
+				"choices": [
+					{ "id": "a", "label": "26" },
+					{ "id": "b", "label": "30" },
+					{ "id": "c", "label": "42" }
+				],
+				"correctChoiceId": "c"
+			}
+		},
+		{
+			"id": "c2-004",
+			"type": "shortAnswer",
+			"payload": {
+				"prompt": "Doplň chybějící písmeno: m_líř (pták).",
+				"acceptedAnswers": ["st", "stů"]
+			}
+		},
+		{
+			"id": "c2-005",
+			"type": "multipleChoice",
+			"payload": {
+				"prompt": "Které slovo patří k jídlu?",
+				"choices": [
+					{ "id": "a", "label": "židle" },
+					{ "id": "b", "label": "ovoce" },
+					{ "id": "c", "label": "boty" }
+				],
+				"correctChoiceId": "b"
+			}
+		},
+		{
+			"id": "c2-006",
+			"type": "shortAnswer",
+			"payload": {
+				"prompt": "Jak se řekne česky velká vodní plocha (moř_e)? Napiš celé slovo.",
+				"acceptedAnswers": ["moře"]
+			}
+		},
+		{
+			"id": "c2-007",
+			"type": "multipleChoice",
+			"payload": {
+				"prompt": "Které slovo má v názvu měkké souhlásky (ě, ť, ď, ň)?",
+				"choices": [
+					{ "id": "a", "label": "strom" },
+					{ "id": "b", "label": "dítě" },
+					{ "id": "c", "label": "kolo" }
+				],
+				"correctChoiceId": "b"
+			}
+		},
+		{
+			"id": "c2-008",
+			"type": "shortAnswer",
+			"payload": {
+				"prompt": "Napiš množné číslo od slova škola.",
+				"acceptedAnswers": ["školy"]
+			}
+		},
+		{
+			"id": "c2-009",
+			"type": "multipleChoice",
+			"payload": {
+				"prompt": "Co dělá sloveso?",
+				"choices": [
+					{ "id": "a", "label": "vyjadřuje činnost" },
+					{ "id": "b", "label": "jmenuje věc" },
+					{ "id": "c", "label": "popisuje vlastnost" }
+				],
+				"correctChoiceId": "a"
+			}
+		},
+		{
+			"id": "c2-010",
+			"type": "shortAnswer",
+			"payload": {
+				"prompt": "Napiš slovo, které znamená opak slova den.",
+				"acceptedAnswers": ["noc"]
+			}
+		},
+		{
+			"id": "c2-011",
+			"type": "multipleChoice",
+			"payload": {
+				"prompt": "Která věta je oznamovací?",
+				"choices": [
+					{ "id": "a", "label": "Pojď sem!" },
+					{ "id": "b", "label": "Dnes prší." },
+					{ "id": "c", "label": "Kde bydlíš?" }
+				],
+				"correctChoiceId": "b"
+			}
+		},
+		{
+			"id": "c2-012",
+			"type": "shortAnswer",
+			"payload": {
+				"prompt": "Doplň diakritiku: str_ej (nápoj z ovoce).",
+				"acceptedAnswers": ["šťavě", "šťávě"]
+			}
+		},
+		{
+			"id": "c2-013",
+			"type": "multipleChoice",
+			"payload": {
+				"prompt": "Vyber slovo s ch na začátku.",
+				"choices": [
+					{ "id": "a", "label": "chléb" },
+					{ "id": "b", "label": "klobouk" },
+					{ "id": "c", "label": "stromek" }
+				],
+				"correctChoiceId": "a"
+			}
+		}
+	]
+}

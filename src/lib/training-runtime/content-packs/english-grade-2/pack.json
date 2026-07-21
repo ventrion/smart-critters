@@ -1,0 +1,146 @@
+{
+	"schemaVersion": 1,
+	"subject": "english",
+	"grade": 2,
+	"items": [
+		{
+			"id": "e2-001",
+			"type": "multipleChoice",
+			"payload": {
+				"prompt": "Jak se anglicky řekne „kočka“?",
+				"choices": [
+					{ "id": "a", "label": "dog" },
+					{ "id": "b", "label": "cat" },
+					{ "id": "c", "label": "bird" }
+				],
+				"correctChoiceId": "b"
+			}
+		},
+		{
+			"id": "e2-002",
+			"type": "shortAnswer",
+			"payload": {
+				"prompt": "Napiš anglicky barvu „červená“.",
+				"acceptedAnswers": ["red"]
+			}
+		},
+		{
+			"id": "e2-003",
+			"type": "multipleChoice",
+			"payload": {
+				"prompt": "Which one means „číslo 3“?",
+				"choices": [
+					{ "id": "a", "label": "two" },
+					{ "id": "b", "label": "three" },
+					{ "id": "c", "label": "four" }
+				],
+				"correctChoiceId": "b"
+			}
+		},
+		{
+			"id": "e2-004",
+			"type": "shortAnswer",
+			"payload": {
+				"prompt": "Napiš anglicky číslo „sedm“.",
+				"acceptedAnswers": ["seven"]
+			}
+		},
+		{
+			"id": "e2-005",
+			"type": "multipleChoice",
+			"payload": {
+				"prompt": "Choose the colour of the sun.",
+				"choices": [
+					{ "id": "a", "label": "blue" },
+					{ "id": "b", "label": "yellow" },
+					{ "id": "c", "label": "green" }
+				],
+				"correctChoiceId": "b"
+			}
+		},
+		{
+			"id": "e2-006",
+			"type": "shortAnswer",
+			"payload": {
+				"prompt": "Napiš anglicky slovo pro „pes“.",
+				"acceptedAnswers": ["dog"]
+			}
+		},
+		{
+			"id": "e2-007",
+			"type": "multipleChoice",
+			"payload": {
+				"prompt": "Hello! How do you say „ahoj“ in the morning?",
+				"choices": [
+					{ "id": "a", "label": "Good night" },
+					{ "id": "b", "label": "Good morning" },
+					{ "id": "c", "label": "Goodbye" }
+				],
+				"correctChoiceId": "b"
+			}
+		},
+		{
+			"id": "e2-008",
+			"type": "shortAnswer",
+			"payload": {
+				"prompt": "Napiš anglicky „ano“.",
+				"acceptedAnswers": ["yes"]
+			}
+		},
+		{
+			"id": "e2-009",
+			"type": "multipleChoice",
+			"payload": {
+				"prompt": "Which word means „dům“?",
+				"choices": [
+					{ "id": "a", "label": "house" },
+					{ "id": "b", "label": "tree" },
+					{ "id": "c", "label": "car" }
+				],
+				"correctChoiceId": "a"
+			}
+		},
+		{
+			"id": "e2-010",
+			"type": "shortAnswer",
+			"payload": {
+				"prompt": "Napiš anglicky barvu „modrá“.",
+				"acceptedAnswers": ["blue"]
+			}
+		},
+		{
+			"id": "e2-011",
+			"type": "multipleChoice",
+			"payload": {
+				"prompt": "Pick the fruit.",
+				"choices": [
+					{ "id": "a", "label": "apple" },
+					{ "id": "b", "label": "table" },
+					{ "id": "c", "label": "shoe" }
+				],
+				"correctChoiceId": "a"
+			}
+		},
+		{
+			"id": "e2-012",
+			"type": "shortAnswer",
+			"payload": {
+				"prompt": "Napiš anglicky číslo „deset“.",
+				"acceptedAnswers": ["ten"]
+			}
+		},
+		{
+			"id": "e2-013",
+			"type": "multipleChoice",
+			"payload": {
+				"prompt": "Which word means „voda“?",
+				"choices": [
+					{ "id": "a", "label": "milk" },
+					{ "id": "b", "label": "water" },
+					{ "id": "c", "label": "bread" }
+				],
+				"correctChoiceId": "b"
+			}
+		}
+	]
+}
