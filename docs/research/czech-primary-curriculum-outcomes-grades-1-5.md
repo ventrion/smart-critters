@@ -1,8 +1,8 @@
 # Czech primary curriculum outcomes (grades 1–5) for skill-bucket design
 
 **Ticket:** [#37 — Research Czech ministry curriculum outcomes per grade](https://github.com/ventrion/smart-critters/issues/37)  
-**Map parent:** [#36](https://github.com/ventrion/smart-critters/issues/36) (precedes skill-bucket grilling [#42](https://github.com/ventrion/smart-critters/issues/42))  
-**Builds on:** [`czech-primary-subjects-grades-1-5.md`](./czech-primary-subjects-grades-1-5.md) (#20 — Subject naming / ČJS mapping)  
+**Map parent:** [Smart Critters: offline content pipeline definition](https://github.com/ventrion/smart-critters/issues/36) (precedes [Decide skill-bucket system for pipeline inputs](https://github.com/ventrion/smart-critters/issues/42))  
+**Builds on:** [`czech-primary-subjects-grades-1-5.md`](./czech-primary-subjects-grades-1-5.md) ([Research Czech primary subjects grades 1–5 for Item planning](https://github.com/ventrion/smart-critters/issues/20) — Subject naming / ČJS mapping)  
 **Domain terms:** Content Pack, Item, Subject, Training (see `CONTEXT.md`)  
 **Date:** 2026-07-21
 
@@ -370,7 +370,7 @@ Finance lived under *Lidé kolem nás* (`ČJS-5-2-03`). Common ŠVP split (*Prvo
 
 ---
 
-## Skill-bucket design guidance (for #42)
+## Skill-bucket design guidance (for [Decide skill-bucket system for pipeline inputs](https://github.com/ventrion/smart-critters/issues/42))
 
 1. **Canonical bucket ID = RVP ZV 2025 OVU code** (`MAT-MAT-001-ZV5-001`, …). One OVU ≈ one primary skill bucket.
 2. **Grade targeting for Content Packs:** do **not** claim “RVP grade 2 requires X”. Instead tag packs as:
@@ -400,7 +400,7 @@ Finance lived under *Lidé kolem nás* (`ČJS-5-2-03`). Common ŠVP split (*Prvo
 
 ---
 
-## Decisions implied for skill-bucket grilling (#42)
+## Decisions implied for [Decide skill-bucket system for pipeline inputs](https://github.com/ventrion/smart-critters/issues/42)
 
 - Bucket vocabulary = **2025 OVU codes** for Maths / Czech / English / ČJS listed above.
 - Period grain (1.–3. vs 4.–5.) comes from **prior RVP** + metodika progressions, explicitly labelled.
