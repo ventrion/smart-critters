@@ -7,7 +7,7 @@
 	"display": "standalone",
 	"orientation": "portrait",
 	"background_color": "#fdfaff",
-	"theme_color": "#6c2bd9",
+	"theme_color": "#1f6f7a",
 	"start_url": "/smart-critters/",
 	"scope": "/smart-critters/",
 	"icons": [

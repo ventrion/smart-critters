@@ -18,6 +18,8 @@ export const chromeLanguageSelfLabel: Record<ChromeLanguage, string> = {
 
 /** Chrome strings for one Chrome Language. */
 export interface ChromeStrings {
+	/** Product brand mark in the Home / Session chrome. */
+	readonly brand: string;
 	/** Grade control caption. */
 	readonly grade: string;
 	/** Caption for the Chrome Language toggle. */
@@ -73,16 +75,23 @@ export interface SummaryStrings {
 	readonly happyTitle: string;
 	/** Cara's line on a try-again Summary (< 70% correct). */
 	readonly tryAgainTitle: string;
+	/** Short celebration label above the oversized XP count. */
+	readonly earned: string;
 	/** Label prefixing the score (correct / total). */
 	readonly scoreLabel: string;
-	/** Label prefixing the XP earned this Session. */
-	readonly xpEarned: string;
+	/** Label for Item XP in the celebration breakdown. */
+	readonly itemXp: string;
+	/** Label for the Session bonus in the celebration breakdown. */
+	readonly bonus: string;
+	/** Label prefixing the install XP total after the Session. */
+	readonly totalXp: string;
 	/** Single primary CTA back to Home. */
 	readonly backHome: string;
 }
 
 export const chromeStrings: Record<ChromeLanguage, ChromeStrings> = {
 	cs: {
+		brand: 'Smart Critters',
 		grade: 'Ročník',
 		language: 'Jazyk',
 		xp: 'XP',
@@ -94,7 +103,7 @@ export const chromeStrings: Record<ChromeLanguage, ChromeStrings> = {
 			bubbleIncorrect: 'Tentokrát ne. Zkusme další!',
 			check: 'Zkontrolovat',
 			next: 'Další',
-			finish: 'Výsledky',
+			finish: 'Shrnutí',
 			position: (n, total) => `${n} / ${total}`,
 			exit: 'Odejít',
 			exitConfirmTitle: 'Ukončit relaci?',
@@ -105,12 +114,16 @@ export const chromeStrings: Record<ChromeLanguage, ChromeStrings> = {
 		summary: {
 			happyTitle: 'Skvělá práce!',
 			tryAgainTitle: 'Dobrý pokus — zkus to znovu!',
+			earned: 'Získáno',
 			scoreLabel: 'Skóre',
-			xpEarned: 'Získané XP',
+			itemXp: 'Za položky',
+			bonus: 'Bonus Session',
+			totalXp: 'Celkem XP',
 			backHome: 'Zpět domů'
 		}
 	},
 	en: {
+		brand: 'Smart Critters',
 		grade: 'Grade',
 		language: 'Language',
 		xp: 'XP',
@@ -122,7 +135,7 @@ export const chromeStrings: Record<ChromeLanguage, ChromeStrings> = {
 			bubbleIncorrect: "Not quite — let's try the next one!",
 			check: 'Check',
 			next: 'Next',
-			finish: 'See results',
+			finish: 'Summary',
 			position: (n, total) => `${n} / ${total}`,
 			exit: 'Exit',
 			exitConfirmTitle: 'End session?',
@@ -133,8 +146,11 @@ export const chromeStrings: Record<ChromeLanguage, ChromeStrings> = {
 		summary: {
 			happyTitle: 'Great job!',
 			tryAgainTitle: 'Good try — give it another go!',
+			earned: 'Earned',
 			scoreLabel: 'Score',
-			xpEarned: 'XP earned',
+			itemXp: 'Item XP',
+			bonus: 'Session bonus',
+			totalXp: 'XP total',
 			backHome: 'Back to Home'
 		}
 	}

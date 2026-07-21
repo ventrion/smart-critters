@@ -18,11 +18,11 @@ import { expect, test, type Page } from '@playwright/test';
 const BASE = '/smart-critters';
 
 /**
- * Read the install XP total as rendered on Home. The Home XP badge renders the
- * reactive `installPrefs.xpTotal` into `.xp-value`.
+ * Read the install XP total as rendered on Home. Companion-stage badge puts the
+ * reactive `installPrefs.xpTotal` in `.badge strong`.
  */
 async function readXpTotal(page: Page): Promise<number> {
-	const text = await page.locator('.xp-value').textContent();
+	const text = await page.locator('.badge strong').textContent();
 	expect(text, 'Home XP badge must render a numeric total').not.toBeNull();
 	const n = Number(text);
 	expect(Number.isFinite(n), `Home XP badge must be numeric, got: ${text}`).toBe(true);
@@ -31,33 +31,27 @@ async function readXpTotal(page: Page): Promise<number> {
 
 /**
  * Answer the currently-rendered Session Item by interacting with the rendered
- * UI only. For multiple-choice Items the correct choice is marked in the DOM
- * (`data-correct="true"`, used by the component's reveal styling) so we click
- * it to drive the accrual path. For short-answer Items the accepted answers
- * live only in the pack (not the DOM), so we submit a placeholder string —
- * those Items score wrong, which is fine: we only need the loop to complete.
+ * UI only. Correctness does not matter for wiring tests — any answer advances
+ * the loop. After answering, VariantB hides choices and shows the primary
+ * advance button (feedback is bubble-led).
  */
 async function answerCurrentItem(page: Page): Promise<void> {
-	const choices = page.locator('.work-area .choice');
+	const choices = page.locator('.work .choice');
 	const choiceCount = await choices.count();
 	if (choiceCount > 0) {
-		// Prefer the correct choice when present; otherwise click the first one.
-		const correct = page.locator('.work-area .choice[data-correct="true"]');
-		const correctCount = await correct.count();
-		const target = correctCount > 0 ? correct.first() : choices.first();
-		await target.click();
+		await choices.first().click();
 		return;
 	}
 	// Short-answer: any non-empty string submits; correctness is irrelevant here.
 	const input = page.locator('.answer-input');
 	await expect(input).toBeVisible();
 	await input.fill('a');
-	await page.locator('.check-button').click();
+	await page.locator('.short-answer .primary').click();
 }
 
 /** Click the post-answer advance button to move to the next Item (or finish). */
 async function advanceItem(page: Page): Promise<void> {
-	await page.locator('.advance-button').click();
+	await page.locator('.card > .primary').click();
 }
 
 /**
@@ -68,28 +62,29 @@ async function advanceItem(page: Page): Promise<void> {
  */
 async function completeSession(page: Page): Promise<void> {
 	// The Session route renders a brief loading shell, then onMount flips it to
-	// playing. Wait for the work area to appear before driving it.
-	await expect(page.locator('.work-area')).toBeVisible();
+	// playing. Wait for the work card to appear before driving it.
+	await expect(page.locator('.work .card')).toBeVisible();
 	for (let i = 0; i < 8; i++) {
 		await answerCurrentItem(page);
-		await expect(page.locator('.advance-button')).toBeVisible();
+		await expect(page.locator('.card > .primary')).toBeVisible();
 		await advanceItem(page);
 	}
 	await expect(page.locator('.summary')).toBeVisible();
 }
 
 /**
- * Read the XP earned this Session as displayed on the Summary screen
- * (`+{outcome.xpDelta}`). Returns the parsed integer.
+ * Read the XP earned this Session as displayed on the Summary celebration
+ * (`.summary-count` renders `+{outcome.xpDelta}` after the count-up).
  */
 async function readSummaryXpDelta(page: Page): Promise<number> {
-	// Two stats: score, then XP earned. The XP-earned <dd> renders `+<delta>`.
-	const dds = page.locator('.summary-stats .stat dd');
-	await expect(dds).toHaveCount(2);
-	const text = await dds.nth(1).textContent();
-	expect(text, 'Summary must display XP earned').not.toBeNull();
-	const n = Number(text!.replace(/[+\s]/g, ''));
-	expect(Number.isFinite(n), `Summary XP earned must be numeric, got: ${text}`).toBe(true);
+	// Authoritative delta is on data-xp-delta so the celebration count-up does
+	// not race the assertion. The visible `+N` text is decorative motion.
+	const count = page.locator('.summary-count');
+	await expect(count).toBeVisible();
+	const raw = await count.getAttribute('data-xp-delta');
+	expect(raw, 'Summary must expose XP earned').not.toBeNull();
+	const n = Number(raw);
+	expect(Number.isFinite(n), `Summary XP earned must be numeric, got: ${raw}`).toBe(true);
 	return n;
 }
 
@@ -101,9 +96,8 @@ test.describe('Smart Critters PoC — kid loop smoke', () => {
 		await page.goto(`${BASE}/`);
 		const startingXp = await readXpTotal(page);
 
-		// Subject entry: tap the Czech label 'Matematika' (default Chrome Language
-		// is Czech) — but locate it by class so this is not label-coupled.
-		await page.locator('.subject-button').first().click();
+		// Subject entry: locate by class so this is not label-coupled.
+		await page.locator('.subjects .subject').first().click();
 		await expect(page).toHaveURL(new RegExp(`${BASE}/session/maths/?$`));
 
 		// Drive the full 8-Item loop to Summary.
@@ -114,7 +108,7 @@ test.describe('Smart Critters PoC — kid loop smoke', () => {
 
 		// Primary CTA returns to Home. Assert the displayed total changed by
 		// exactly the displayed delta — pure wiring, no recomputation.
-		await page.locator('.primary-cta').click();
+		await page.locator('.summary-cta').click();
 		await expect(page).toHaveURL(new RegExp(`${BASE}/?$`));
 		const finalXp = await readXpTotal(page);
 
@@ -128,15 +122,15 @@ test.describe('Smart Critters PoC — kid loop smoke', () => {
 		// Enter a Session and answer at least one Item, so we are past the
 		// loading shell and any in-memory correctness state exists. Exit must
 		// abandon the run with zero XP regardless of answered Items.
-		await page.locator('.subject-button').nth(1).click();
+		await page.locator('.subjects .subject').nth(1).click();
 		await expect(page).toHaveURL(new RegExp(`${BASE}/session/czech/?$`));
-		await expect(page.locator('.work-area')).toBeVisible();
+		await expect(page.locator('.work .card')).toBeVisible();
 		await answerCurrentItem(page);
 
-		// Exit -> confirm modal -> confirm ends the Session.
-		await page.locator('.exit-button').click();
-		await expect(page.locator('.modal')).toBeVisible();
-		await page.locator('.modal-primary').click();
+		// Exit -> confirm card -> confirm ends the Session.
+		await page.locator('.toolbar .ghost').click();
+		await expect(page.locator('#exit-confirm-title')).toBeVisible();
+		await page.locator('.row .ghost').click();
 
 		// Back at Home with the total byte-for-byte unchanged.
 		await expect(page).toHaveURL(new RegExp(`${BASE}/?$`));
@@ -157,7 +151,7 @@ test.describe('Smart Critters PoC — kid loop smoke', () => {
 		// The prerendered HTML may carry relative paths (`./session/maths`) which
 		// SvelteKit resolves under the base; the observable outcome is that each
 		// link's resolved URL points to `<base>/session/<subject>`.
-		const subjectLinks = page.locator('.subject-button');
+		const subjectLinks = page.locator('.subjects .subject');
 		await expect(subjectLinks).toHaveCount(3);
 		const resolved = await subjectLinks.evaluateAll((els) =>
 			(els as HTMLAnchorElement[]).map((a) => a.href)
@@ -172,10 +166,8 @@ test.describe('Smart Critters PoC — kid loop smoke', () => {
 		// SvelteKit prerender may rewrite the raw attribute to a relative URL
 		// (e.g. `./critters/...`); what matters is the RESOLVED URL the browser
 		// fetches, which is the observable outcome under the base path.
-		const caraImg = page.locator('.cara img');
-		const caraResolved = await caraImg.evaluate(
-			(el) => (el as HTMLImageElement).src
-		);
+		const caraImg = page.locator('.hero .cara');
+		const caraResolved = await caraImg.evaluate((el) => (el as HTMLImageElement).src);
 		expect(caraResolved, 'Cara pose must resolve under the base path').toContain(
 			`${BASE}/critters/cara/idle.png`
 		);
@@ -196,7 +188,7 @@ test.describe('Smart Critters PoC — kid loop smoke', () => {
 		for (const subject of ['maths', 'czech', 'english'] as const) {
 			await page.goto(`${BASE}/session/${subject}`);
 			await expect(page).toHaveURL(new RegExp(`${BASE}/session/${subject}/?$`));
-			await expect(page.locator('.subject-name')).toBeVisible();
+			await expect(page.locator('.subject-chip')).toBeVisible();
 		}
 	});
 
@@ -207,7 +199,7 @@ test.describe('Smart Critters PoC — kid loop smoke', () => {
 		// First load registers the service worker (production-only hook in the
 		// root layout). Wait until an activated SW controls the page.
 		await page.goto(`${BASE}/`);
-		await expect(page.locator('.xp-badge')).toBeVisible();
+		await expect(page.locator('.badge')).toBeVisible();
 		await page.waitForFunction(async () => {
 			const reg = await navigator.serviceWorker.getRegistration();
 			return !!reg && !!reg.active && !!navigator.serviceWorker.controller;
@@ -217,9 +209,9 @@ test.describe('Smart Critters PoC — kid loop smoke', () => {
 		// network-first navigation handler caches the prerendered HTML, and the
 		// cache-first handler caches the JS/CSS chunks on first fetch.
 		await page.goto(`${BASE}/session/maths`);
-		await expect(page.locator('.session-topbar')).toBeVisible();
+		await expect(page.locator('.toolbar')).toBeVisible();
 		await page.goto(`${BASE}/`);
-		await expect(page.locator('.xp-badge')).toBeVisible();
+		await expect(page.locator('.badge')).toBeVisible();
 
 		// Equivalent service-worker cache assertion: the SW must have populated
 		// its cache with the base-path shell + Cara poses + Home navigation.
@@ -254,12 +246,12 @@ test.describe('Smart Critters PoC — kid loop smoke', () => {
 			const reload = await page.reload();
 			expect(reload, 'offline Home reload must produce a response').not.toBeNull();
 			expect(reload!.status(), 'offline Home must be served from the SW cache').toBe(200);
-			await expect(page.locator('.xp-badge')).toBeVisible();
+			await expect(page.locator('.badge')).toBeVisible();
 
 			await page.goto(`${BASE}/session/czech`);
-			await expect(page.locator('.work-area')).toBeVisible();
+			await expect(page.locator('.work .card')).toBeVisible();
 			await answerCurrentItem(page);
-			await expect(page.locator('.advance-button')).toBeVisible();
+			await expect(page.locator('.card > .primary')).toBeVisible();
 		} finally {
 			await context.setOffline(false);
 		}
