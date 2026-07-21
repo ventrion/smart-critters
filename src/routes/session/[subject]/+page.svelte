@@ -190,7 +190,7 @@
 			src={`${base}/critters/cara/${caraSummaryPose}.png`}
 			alt={caraSummaryAlt}
 			width="340"
-			height="340"
+			height="510"
 		/>
 		<p class="summary-label">{summaryStrings.earned}</p>
 		<p class="summary-count" data-xp-delta={outcome.xpDelta} aria-live="polite">+{shownXp}</p>
@@ -221,7 +221,7 @@
 				src={`${base}/critters/cara/idle.png`}
 				alt="Cara the capybara–mermaid Critter, idle pose"
 				width="220"
-				height="220"
+				height="330"
 			/>
 			<p class="bubble" role="status" aria-live="polite">{bubbleText}</p>
 			<div class="dots" aria-label={sessionStrings.position(currentIndex + 1, SESSION_LENGTH)}>
@@ -355,6 +355,9 @@
 
 	.cara {
 		width: min(100%, 220px);
+		height: auto;
+		aspect-ratio: 2 / 3;
+		object-fit: contain;
 		margin: 0 auto;
 		display: block;
 		filter: drop-shadow(0 10px 18px rgb(23 52 63 / 0.18));
@@ -547,6 +550,8 @@
 	.summary-cara {
 		width: min(70vw, 340px);
 		height: auto;
+		aspect-ratio: 2 / 3;
+		object-fit: contain;
 		margin-bottom: 0.5rem;
 		filter: drop-shadow(0 14px 24px rgb(0 0 0 / 0.35));
 		animation: cheer 0.55s ease;

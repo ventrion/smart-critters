@@ -48,7 +48,7 @@
 			src={`${base}/critters/cara/idle.png`}
 			alt="Cara the capybara–mermaid Critter, idle pose"
 			width="420"
-			height="420"
+			height="630"
 		/>
 		<div class="badge" title={strings.xp} aria-live="polite">
 			<strong>{installPrefs.xpTotal}</strong>
@@ -131,6 +131,8 @@
 	.cara {
 		width: min(78vw, 420px);
 		height: auto;
+		aspect-ratio: 2 / 3;
+		object-fit: contain;
 		filter: drop-shadow(0 18px 28px rgb(0 0 0 / 0.28));
 		animation: bob 3.2s ease-in-out infinite;
 	}
