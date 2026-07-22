@@ -45,8 +45,16 @@ The language of the app shell (navigation, buttons, feedback chrome), distinct f
 _Avoid_: locale (implementation term), UI language (looser synonym)
 
 **Item**:
-A single prompt-and-response unit inside a Content Pack, with a type that selects how it is rendered and scored. PoC Item types are multiple choice and short answer.
-_Avoid_: question (informal synonym), exercise (broader/school term), card
+A single prompt-and-response unit inside a Content Pack, with a type that selects how it is rendered and scored from a shared catalog (not per–Skill Bucket dialects). Near-term types: multiple choice, short answer, image choice, order, match, and gap-match; optional image/audio stimulus and layout presentation; hotspot later. PoC uses multiple choice and short answer. Pipeline-authored Items carry a Skill Bucket and Progression Band so mixed difficulty inside a Content Pack is explicit.
+_Avoid_: question (informal synonym), exercise (broader/school term), card, dedicated types for timeline/scene/budget/traffic-sign (those are stimulus/layout over shared scorers)
+
+**Skill Bucket**:
+A pipeline generation unit keyed by one RVP ZV 2025 OVU code, with a mandatory human-readable slug. Its definition is the LLM brief (objectives, metodika notes, exemplars) plus references to shared Item-shape schemas — not a private per-bucket schema dialect. Prior-RVP outcome codes may appear as aliases. A Content Pack pools Items from many Skill Buckets for one Subject × Grade.
+_Avoid_: topic (finer učivo-style tags only), inventable pedagogical IDs as the canonical key (e.g. `math_add_within_10`), one-bucket-one-pack
+
+**Progression Band**:
+The non-binding NPI metodika difficulty tag on a Skill Bucket target and on each Item: `na_zacatku`, `na_ceste`, or `splneno`. Used to mix difficulty inside a Content Pack without claiming per-grade ministry standards. Ahead / gifted challenge uses a higher-Grade Content Pack (Grade+N), not a fourth “advanced” band.
+_Avoid_: advanced band, gifted band, inventable 1–10 difficulty scales as the primary key, treating metodika bands as binding RVP grade requirements
 
 **XP**:
 A thin local points balance earned from Training, used in the PoC to experiment with progress visualization; later it can feed Critter unlocks and mini-game access. PoC XP is per install (one balance); profiles come later. Not a currency with sinks in the PoC. PoC displays a running total only (no Level). Starting earn rules: +10 per correct Item, +20 Session bonus at ≥70% correct; Exit earns nothing.
